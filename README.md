@@ -1,51 +1,50 @@
 # "AmazonDemo" 
 
-### Created Amazon framework using TestNG and Page object model where  VerifyCountryRegion.class is the main class responsible for updating the country /Region.
+## Created Amazon framework using TestNG and Page object model
 
-Tool / Technologies used :
-1. Eclipse IDE for Enterprise Java Developers.
-   Version: 2019-06 (4.12.0)
-2. JAVA Jdk 11.0.7 
-3. Node v12  
-4. Appium 1.15
-5. Android SDK 3.6.3
-6. Java client 7.2.0
+## Tool / Technologies used :
+```
+* Eclipse IDE for Enterprise Java Developers 2019-06 (4.12.0)
+* JAVA Jdk 11.0.7 
+* Node v12  
+* Appium 1.15
+* Android SDK 3.6.3
+* Java client 7.2.0
+```
 
 For other maven dependency please Refer pom.xml file.
- 
-Flow of the Work assignment
-```
-	Step 1. Launch the Amazon app.
- 	Step 2.	Click on hamburger Menu.
- 	Step 3.	Click on Settings tab.
- 	Step 4.	Navigate to Settings page and click on Country/region as Australia.
- 	Step 5: Finish
-```
 
-How To Verify the changes (Running testcases ): 
-
+## Flow of the Work assignment
 ```
-1 Way : go to Path : src\test\java\testCase\VerifyCountryRegion.java
-right click --->Run
-
-2. Way Using testng.xml file 
-right click --->Run
+* Launch the Amazon app.
+* Click on hamburger Menu.
+* Click on Settings tab.
+* Navigate to Settings page and click on Country/region as Australia.
+* Finish
 ```
 
+## How To Verify the changes (Running testcases ): 
 
-globle.properties is containing name of the APK files and device name (For Dynamic handling)
-Need to change name device= "Your device name". 
-.apk application location : .\app
+```
+First Way:
+* Go to  src\test\java\testCase\VerifyCountryRegion.java
+* Inside file right click --->Run (Eclipse IDE functionality)
 
-Utilities class having all Common functions  
-Path : \src\main\java\utilities\Utilities.java
+Second Way:
+* Using testng.xml file 
+* Right click --->Run
+```
 
-Used listener For Reporting User ExtentReports and checking the failed status 
+## Important Variables & terminology need to follow
+* global.properties => contains name of the APK files and device name (For Dynamic handling)
+* Need to change name device => "Your device name". 
+* Root directory apk application location : .\app
+* Utilities class => Contains all Common functions (PATH: \src\main\java\utilities\Utilities.java )
+* Assertion package => compare class => Assertions & Validations 
+* listener class => contains ExtentReports and checking the failed status via screenshots 
 
-<listener class-name = "resources.Listeners"/>
-<listener class-name="extentReports.ExtentReportNG"/>
-
-
-Important Note : I am using real android device for automation testing, as i am not able to launch emulator from android studio. 
+## Important Note :
+I am using real android device for automation testing, as I am not able to launch emulator from android studio.So need to connect real
+andriod mobile device with laptop using USB.
 
    
