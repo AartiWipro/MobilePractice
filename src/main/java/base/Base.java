@@ -36,7 +36,7 @@ public class Base {
 	
 	public static AndroidDriver<AndroidElement> Capabilities(String appName) throws InterruptedException, IOException {
 
-		FileInputStream fs = new FileInputStream(System.getProperty("user.dir") +"\\src\\main\\java\\globle.properties");
+		FileInputStream fs = new FileInputStream(System.getProperty("user.dir") +"\\src\\main\\java\\global.properties");
 		Properties prop = new Properties();
 		prop.load(fs);
 		File app = new  File(System.getProperty("user.dir")+"\\app\\"+prop.get(appName));
