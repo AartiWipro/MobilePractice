@@ -1,7 +1,5 @@
 package assertions;
 
-import static org.testng.Assert.fail;
-
 import org.openqa.selenium.WebElement;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.AndroidElement;
@@ -54,9 +52,7 @@ public class Compare {
 		return result;
 	}
 
-
 	public static boolean assertFail() {
 		return false;
-		
 	}
 }

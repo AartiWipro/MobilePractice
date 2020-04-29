@@ -9,5 +9,5 @@
     <classes>
       <class name="testCase.VerifyCountryRegion"/>
     </classes>
-  </test> <!-- Test -->
-</suite> <!-- Suite -->
+  </test> 
+</suite> 

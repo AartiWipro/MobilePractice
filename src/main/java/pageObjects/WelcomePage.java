@@ -9,7 +9,7 @@ import io.appium.java_client.pagefactory.AppiumFieldDecorator;
 
 public class WelcomePage {
 
-	//Concatenate driver
+	// Concatenate driver
 	public WelcomePage(AppiumDriver driver) {
 		PageFactory.initElements(new AppiumFieldDecorator(driver), this);
 	}

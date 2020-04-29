@@ -33,7 +33,7 @@ public class VerifyCountryRegion extends Base {
 		Utilities.Click(hp.searchPlate);
 		Utilities.Click(sp.setting);
 		Utilities.Click(sp.countryLanguage);
-		Utilities.Click(sp.countryRegion);		
+		Utilities.Click(sp.countryRegion);
 
 		try {
 			if (!sp.ausRedioBtn.isSelected()) {
@@ -52,7 +52,7 @@ public class VerifyCountryRegion extends Base {
 
 		// Country Verification
 		String Country = sp.GetCountryNameText(driver);
-		boolean flag = Compare.assertEquals(Country, "Australia");	
+		boolean flag = Compare.assertEquals(Country, "Australia");
 		if (flag)
 			System.out.println("Verified Country...");
 		else
