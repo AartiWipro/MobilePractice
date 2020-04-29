@@ -16,10 +16,20 @@ import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.Status;
 import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
 
+/**
+ * @author Aarti
+ *
+ */
 public class ExtentReportNG implements IReporter {
 	private ExtentReports extent;
 	ExtentHtmlReporter htmlReporter;
 
+	/**
+	 * @param <XmlSuite>
+	 * @param XmlSuite
+	 * @param suites
+	 * @param outputDirectory
+	 */
 	public <XmlSuite> void genrateReport(List<XmlSuite> XmlSuite, List<ISuite> suites, String outputDirectory) {
 		htmlReporter = new ExtentHtmlReporter(new File(System.getProperty("user.dir") + "\\htmlReports\\result.html"));		
 		extent = new ExtentReports();
@@ -39,6 +49,10 @@ public class ExtentReportNG implements IReporter {
 		extent.flush();
 	}
 
+	/**
+	 * @param tests
+	 * @param status
+	 */
 	private void buildTestModes(IResultMap tests, Status status) {
 		ExtentTest test;
 		if (tests.size() > 0) {

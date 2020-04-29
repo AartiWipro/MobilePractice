@@ -3,6 +3,8 @@ package testCase;
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.WebElement;
+import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 import assertions.Compare;
 import base.Base;
@@ -13,12 +15,30 @@ import pageObjects.SearchPanel;
 import pageObjects.WelcomePage;
 import utilities.Utilities;
 
+/**
+ * @author Aarti
+ *
+ */
 public class VerifyCountryRegion extends Base {
-
-	@Test
-	public void verifyingCountry() throws InterruptedException, IOException {
+	
+	public AndroidDriver<AndroidElement> driver;
+	
+	/**
+	 * @throws InterruptedException
+	 * @throws IOException
+	 */
+	@BeforeTest
+	public void initialization() throws InterruptedException, IOException {
 		service = StartServer();
-		AndroidDriver<AndroidElement> driver = Capabilities("AmazonApplication");
+		driver = Capabilities("AmazonApplication");
+	}
+
+	/**
+	 * @throws InterruptedException
+	 * @throws IOException
+	 */
+	@Test
+	public void verifyingCountry() throws InterruptedException, IOException {	
 		WelcomePage wp = new WelcomePage(driver);
 		HomePage hp = new HomePage(driver);
 		SearchPanel sp = new SearchPanel(driver);
@@ -57,6 +77,14 @@ public class VerifyCountryRegion extends Base {
 			System.out.println("Verified Country...");
 		else
 			Compare.assertFail();
+	}
+	
+	/**
+	 * @throws InterruptedException
+	 * @throws IOException
+	 */
+	@AfterTest
+	public void endSession() throws InterruptedException, IOException {
 		closeDriver();
 		service.stop();
 	}

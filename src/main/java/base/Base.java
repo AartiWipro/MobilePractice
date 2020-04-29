@@ -17,12 +17,19 @@ import io.appium.java_client.service.local.AppiumDriverLocalService;
 import io.appium.java_client.service.local.AppiumServiceBuilder;
 import io.appium.java_client.service.local.flags.GeneralServerFlag;
 
+/**
+ * @author Aarti
+ *
+ */
 public class Base {
 
 	public static AppiumDriverLocalService service;
 	public static AndroidDriver<AndroidElement> driver;
 
 	// Need Dependency slf4j :api, simple. commons : lang3, io, validator.
+	/**
+	 * @return
+	 */
 	public AppiumDriverLocalService StartServer() {
 		service = AppiumDriverLocalService.buildService(new AppiumServiceBuilder()
 				.withLogFile(new File(System.getProperty("user.dir") + "\\src\\test\\resources\\logs\\logResults.txt"))
@@ -31,6 +38,12 @@ public class Base {
 		return service;
 	}
 
+	/**
+	 * @param appName
+	 * @return
+	 * @throws InterruptedException
+	 * @throws IOException
+	 */
 	public static AndroidDriver<AndroidElement> Capabilities(String appName) throws InterruptedException, IOException {
 
 		FileInputStream fs = new FileInputStream(
@@ -49,6 +62,10 @@ public class Base {
 		return driver;
 	}
 
+	/**
+	 * @param sc
+	 * @throws IOException
+	 */
 	public static void GetScreenShot(String sc) throws IOException {
 		File srcFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
 		FileUtils.copyFile(srcFile, new File(System.getProperty("user.dir") + "\\screenShots\\" + sc + ".png"));

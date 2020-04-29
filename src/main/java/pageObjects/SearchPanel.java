@@ -4,14 +4,19 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
 
 import io.appium.java_client.AppiumDriver;
-import io.appium.java_client.MobileBy;
+import io.appium.java_client.android.AndroidDriver;
+import io.appium.java_client.android.AndroidElement;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 import io.appium.java_client.pagefactory.AppiumFieldDecorator;
 
+/**
+ * @author Aarti
+ *
+ */
 public class SearchPanel {
 
 	// Concatenate driver
-	public SearchPanel(AppiumDriver driver) {
+	public SearchPanel(AndroidDriver<AndroidElement> driver) {		
 		PageFactory.initElements(new AppiumFieldDecorator(driver), this);
 	}
 
@@ -24,7 +29,11 @@ public class SearchPanel {
 	@AndroidFindBy(xpath = "//*[@text ='Australia Amazon.com.au']")
 	public WebElement ausRedioBtn;
 
-	public String GetCountryNameText(AppiumDriver driver) {
+	/**
+	 * @param driver
+	 * @return
+	 */
+	public String GetCountryNameText(AppiumDriver<AndroidElement> driver ) {
 		String conRegValue = countryRegion.getText();
 		return conRegValue;
 	}
