@@ -5,6 +5,9 @@
     <classes>
       <class name="testCase.VerifyCountryRegion">
         <methods>
+          <include name="test123"/>
+          <include name="endSession"/>
+          <include name="verifyingCountry1"/>
           <include name="verifyingCountry"/>
         </methods>
       </class> <!-- testCase.VerifyCountryRegion -->

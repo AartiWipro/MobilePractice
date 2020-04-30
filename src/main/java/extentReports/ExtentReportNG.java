@@ -10,6 +10,7 @@ import org.testng.ISuite;
 import org.testng.ISuiteResult;
 import org.testng.ITestContext;
 import org.testng.ITestResult;
+import org.testng.xml.XmlSuite;
 
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
@@ -30,7 +31,8 @@ public class ExtentReportNG implements IReporter {
 	 * @param suites
 	 * @param outputDirectory
 	 */
-	public <XmlSuite> void genrateReport(List<XmlSuite> XmlSuite, List<ISuite> suites, String outputDirectory) {
+	   @Override
+	   public void generateReport(List<XmlSuite> xmlSuites, List<ISuite> suites, String outputDirectory) {
 		htmlReporter = new ExtentHtmlReporter(new File(System.getProperty("user.dir") + "\\htmlReports\\result.html"));		
 		extent = new ExtentReports();
 

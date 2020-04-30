@@ -32,7 +32,7 @@ public class Base {
 	 */
 	public AppiumDriverLocalService StartServer() {
 		service = AppiumDriverLocalService.buildService(new AppiumServiceBuilder()
-				.withLogFile(new File(System.getProperty("user.dir") + "\\src\\test\\resources\\logs\\logResults.txt"))
+				.withLogFile(new File(System.getProperty("user.dir") + "\\src\\test\\resources\\logs\\logResult.txt"))
 				.withArgument(GeneralServerFlag.LOCAL_TIMEZONE));
 		service.start();
 		return service;
